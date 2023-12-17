@@ -11,6 +11,15 @@ class Api::V1::HardwaresController < ApplicationController
     render json: @hardware
   end
 
+  def create
+    @hardware = Hardware.new(hardware_params)
+    if @hardware.save
+      render json: @hardware, status: :created, location: api_v1_hardware_url(@hardware)
+    else
+      render json: @hardware.errors, status: :unprocessable_entity
+    end
+  end
+
 private
 def set_hardware
   @hardware = Hardware.find(params[:id])
