@@ -1,7 +1,7 @@
 class Api::V1::HardwaresController < ApplicationController
 
-  before_action :set_hardware, only: %i[show update] # show update destroy
-
+  before_action :set_hardware, only: %i[show update destroy] 
+  
   def index
     @hardwares = Hardware.all 
     render json: @hardwares
@@ -26,6 +26,10 @@ class Api::V1::HardwaresController < ApplicationController
     else
       render json: @hardware.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @hardware.destroy!
   end
 
 private
