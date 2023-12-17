@@ -12,4 +12,12 @@ RSpec.describe Api::V1::HardwaresController, type: :controller do
     end
   end
 
+  describe 'GET /api/v1/hardwares/id' do
+    it 'Consegue listar um hardware especifico e retornar status 200?' do
+      get :show, params: {id: @hardware.id}
+      expect(response.body).to include_json(part: 'fonte')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
