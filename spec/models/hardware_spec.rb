@@ -12,7 +12,7 @@ RSpec.describe Hardware, type: :model do
     end
 
     it 'function consegue ser preenchido?' do
-      @hardware.function = ''
+      @hardware.function = 'armazenamento de dados'
       expect(@hardware.function).to eq('armazenamento de dados')
     end
 
