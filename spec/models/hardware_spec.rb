@@ -11,6 +11,11 @@ RSpec.describe Hardware, type: :model do
       expect(@hardware.part).to eq('ssd')
     end
 
+    it 'function consegue ser preenchido?' do
+      @hardware.function = ''
+      expect(@hardware.function).to eq('armazenamento de dados')
+    end
+
   end
 
 end
