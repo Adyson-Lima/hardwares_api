@@ -26,6 +26,11 @@ RSpec.describe Hardware, type: :model do
       expect(@hardware).to be_valid
     end
 
+    it 'hardware invalido com campos obrigatorios não preenchidos?' do
+      hardware = Hardware.new
+      expect(hardware).to be_valid
+    end
+
   end
 
 end
