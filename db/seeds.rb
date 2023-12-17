@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+puts 'Gerando hardwares...'
+
+5.times do |i|
+  Hardware.create(
+    part: ["ssd", "memoria ram", "cabo sata"].sample ,
+    function: "part do pc"
+    )
+end
+
+puts 'hardwares gerados com sucesso!'
