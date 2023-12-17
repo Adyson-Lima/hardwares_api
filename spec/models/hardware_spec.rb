@@ -1,0 +1,16 @@
+require 'rails_helper'
+
+RSpec.describe Hardware, type: :model do
+
+  before{@hardware = Hardware.new}
+
+  describe 'Testes de preenchimento do model Hardware' do
+
+    it 'part consegue ser preenchido?' do
+      @hardware.part = ''
+      expect(@hardware.part).to eq('ssd')
+    end
+
+  end
+
+end
