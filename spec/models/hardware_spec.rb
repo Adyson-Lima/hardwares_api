@@ -7,7 +7,7 @@ RSpec.describe Hardware, type: :model do
   describe 'Testes de preenchimento do model Hardware' do
 
     it 'part consegue ser preenchido?' do
-      @hardware.part = ''
+      @hardware.part = 'ssd'
       expect(@hardware.part).to eq('ssd')
     end
 
