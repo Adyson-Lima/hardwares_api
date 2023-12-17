@@ -18,4 +18,14 @@ RSpec.describe Hardware, type: :model do
 
   end
 
+  describe 'Testes de validação do model Hardware' do
+
+    it 'hardware valido com campos obrigatorios preenchidos?' do
+      @hardware.part = ''
+      @hardware.function = ''
+      expect(@hardware).to be_valid
+    end
+
+  end
+
 end
