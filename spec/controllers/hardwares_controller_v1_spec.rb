@@ -20,4 +20,12 @@ RSpec.describe Api::V1::HardwaresController, type: :controller do
     end
   end
 
+  describe 'POST /api/v1/hardwares' do
+    it 'Consegue criar um hardware e retornar status 201?' do
+      post :create, params: {hardware: {part: 'motherboard', function: 'integração de outras partes'}, format: :json}
+      expect(response.body).to include_json(part: 'motherboard')
+      expect(response).to have_http_status(201)
+    end
+  end
+
 end
