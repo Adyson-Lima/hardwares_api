@@ -21,8 +21,8 @@ RSpec.describe Hardware, type: :model do
   describe 'Testes de validação do model Hardware' do
 
     it 'hardware valido com campos obrigatorios preenchidos?' do
-      @hardware.part = ''
-      @hardware.function = ''
+      @hardware.part = 'memória ram'
+      @hardware.function = 'armazenamento temporario de dados'
       expect(@hardware).to be_valid
     end
 
