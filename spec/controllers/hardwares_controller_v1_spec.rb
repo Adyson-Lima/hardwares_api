@@ -28,4 +28,13 @@ RSpec.describe Api::V1::HardwaresController, type: :controller do
     end
   end
 
+  describe 'PATCH /api/v1/hardwares/id' do
+    it 'Consegue atualizar um hardware e retornar status 200?' do
+      hardware = Hardware.last
+      patch :update, params: {hardware: {part: 'cabo sata', function: 'interligar parts'}, id: hardware.id}
+      expect(response.body).to include_json(part: 'cabo sata')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
